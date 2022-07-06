@@ -1,0 +1,127 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url("bg.jpg");
+  background-position: center;
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.weather-app {
+  width: 600px;
+  max-width: 400px;
+  padding: 40px 20px;
+  background-color: #0c0b0bbe;
+  border-radius: 10px;
+  color: #fefefe;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar input {
+  width: calc(100% - 55px);
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 0 20px;
+  margin-right: 5px;
+  background-color: rgb(19, 14, 14);
+  color: #fefefe;
+  font-size: 17px;
+}
+
+.search-bar button {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.search-bar button:active {
+  transform: scale(0.9);
+}
+
+.weather-info {
+  margin: 30px 0 0;
+}
+.weather-info h3 {
+  font-size: 25px;
+  letter-spacing: 0.1rem;
+}
+
+.weather-info h1 {
+  font-size: 40px;
+  margin: 15px 0;
+}
+
+small {
+  font-size: 14px;
+}
+
+.weather-info .condition {
+  display: flex;
+  align-items: center;
+}
+
+.weather-info .condition p {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.weather-info > p {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.warn {
+  display: block;
+  text-align: center;
+  color: rgb(207, 20, 20);
+  background-color: #fff;
+  padding: 10px;
+  margin-top: 20px;
+  display: none;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid rgb(87, 85, 85);
+  border-left: 1.5px solid rgb(255, 255, 255);
+  display: none;
+  margin: 20px auto;
+  animation: rotate 0.6s linear infinite;
+}
+
+@keyframes rotate {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  99% {
+    transform: rotate(360deg);
+  }
+}

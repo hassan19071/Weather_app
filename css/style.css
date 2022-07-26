@@ -3,7 +3,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: url("bg.jpg");
+  background-image: url("../imgs/bg.jpg");
   background-position: center;
   background-size: cover;
   font-family: "Poppins", sans-serif;

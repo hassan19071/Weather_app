@@ -72,16 +72,39 @@ async function weatherApi() {
     let img = document.createElement("img");
     let status = document.createElement("span");
     let temp = document.createElement("span");
-    let icon = document.createElement("i");
     let statusText = document.createTextNode(filterDays[i].weather.description);
     let tempText = document.createTextNode(parseInt(filterDays[i].temp) + "°C");
-
+    let da = new Date(filterDays[i].datetime);
+    let dayName = "";
+    switch (da.getDay()) {
+      case 0:
+        dayName = "Sun";
+        break;
+      case 1:
+        dayName = "Mon";
+        break;
+      case 2:
+        dayName = "Tues";
+        break;
+      case 3:
+        dayName = "Wed";
+        break;
+      case 4:
+        dayName = "Thurs";
+        break;
+      case 5:
+        dayName = "Fri";
+        break;
+      case 6:
+        dayName = "Sat";
+        break;
+      default:
+        break;
+    }
     // add class;
     dayCon.classList.add("day");
     conditionForecast.classList.add("condition-forecast");
-    icon.setAttribute("class", "fa-regular fa-calendar-days me-2");
-    dateSpan.appendChild(icon);
-    date.innerHTML = filterDays[i].datetime;
+    date.innerHTML = dayName;
     dateSpan.appendChild(date);
     img.setAttribute("src", `imgs/${filterDays[i].weather.icon}.png`);
     img.setAttribute("alt", "weather condition");

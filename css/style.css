@@ -14,9 +14,10 @@ body.dark {
 }
 .weather-app {
   width: 100%;
-  padding: 50px 30px;
+  padding: 50px 10px;
   @media (min-width: 991px) {
     width: 600px;
+    padding: 50px 30px;
   }
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
@@ -30,20 +31,20 @@ body.dark {
 
 .search-bar input {
   width: calc(100% - 55px);
-  border-radius: 10px;
+  border-radius: 5px;
   border: none;
   outline: none;
-  padding: 0 20px;
+  padding: 0 15px;
   margin-right: 5px;
   background-color: rgb(249, 242, 242);
   color: #212020;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .search-bar button {
   width: 50px;
   height: 50px;
-  border-radius: 10px;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -184,19 +185,20 @@ body.dark {
   width: 50px;
   margin-right: 10px;
   @media (max-width: 600px) {
-    width: 30px;
+    width: 20px;
   }
 }
 .forecast-container .condition-forecast {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .forecast .days .day span {
-  font-weight: 400;
+  font-weight: 300;
   color: #2c2c2c;
   font-size: 15px;
   @media (max-width: 500px) {
-    font-size: 12px;
+    font-size: 8px;
   }
 }
 .forecast .title {

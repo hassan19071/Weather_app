@@ -1,29 +1,28 @@
-body {
+body{
+  background-color: #2a89f5 !important;
+  overflow-x: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-image: url("../imgs/bg.jpg");
-  background-position: center;
-  background-size: cover;
-  font-family: "Poppins", sans-serif;
+  padding: 100px 0 60px;
 }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body.hidden{
+  overflow-y: hidden !important;
 }
-
-.weather-app {
-  width: 600px;
-  max-width: 400px;
-  padding: 40px 20px;
-  background-color: #0c0b0bbe;
-  border-radius: 10px;
-  color: #fefefe;
+body.dark{
+  background-color: #302f2f !important;
 }
-
+.weather-app{
+  width: 100%;
+  padding:50px 30px ;
+   @media (min-width:991px) {
+     width: 600px;
+   }
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.date{
+  color: #f7f4f4;
+}
 .search-bar {
   display: flex;
   justify-content: center;
@@ -36,8 +35,8 @@ body {
   outline: none;
   padding: 0 20px;
   margin-right: 5px;
-  background-color: rgb(19, 14, 14);
-  color: #fefefe;
+  background-color: rgb(249, 242, 242);
+  color: #212020;
   font-size: 17px;
 }
 
@@ -50,44 +49,13 @@ body {
   justify-content: center;
   border: none;
   cursor: pointer;
+  background-color: rgb(249, 242, 242);
 }
 
 .search-bar button:active {
   transform: scale(0.9);
 }
 
-.weather-info {
-  margin: 30px 0 0;
-}
-.weather-info h3 {
-  font-size: 25px;
-  letter-spacing: 0.1rem;
-}
-
-.weather-info h1 {
-  font-size: 40px;
-  margin: 15px 0;
-}
-
-small {
-  font-size: 14px;
-}
-
-.weather-info .condition {
-  display: flex;
-  align-items: center;
-}
-
-.weather-info .condition p {
-  margin-left: 10px;
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.weather-info > p {
-  font-size: 20px;
-  margin-top: 20px;
-}
 
 .warn {
   display: block;
@@ -103,8 +71,8 @@ small {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1.5px solid rgb(87, 85, 85);
-  border-left: 1.5px solid rgb(255, 255, 255);
+  border: 1.5px solid rgb(229, 225, 225);
+  border-left: 1.5px solid rgb(126, 127, 127);
   display: none;
   margin: 20px auto;
   animation: rotate 0.6s linear infinite;
@@ -124,4 +92,272 @@ small {
   99% {
     transform: rotate(360deg);
   }
+}
+
+.condition img{
+  width: 60px;
+}
+.info{
+  color: #fff;
+}
+.info .temperature{
+   font-size: 70px;
+   font-weight: 300;
+}
+.info .weather-condition,.text span{
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+.info .name{
+  font-size: 20px;
+  font-weight: 400;
+}
+.info .name strong{
+  font-weight: 400;
+}
+.hum-wind img{
+   width: 50px;
+   @media (max-width:450px) {
+    width: 30px;
+   }
+}
+.hum-wind p,.hum-wind p span{
+  font-size: 20px;
+  @media (max-width:450px) {
+    font-size: 15px;
+   }
+}
+.show-more span{
+  cursor: pointer;
+  transition: .2s;
+  border: 1px solid #eee;
+  padding: 8px 15px;
+}
+.show-more span:hover{
+  background-color: #eee;
+  color: #222;
+}
+
+.forecast-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(24, 23, 23, 0.326);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 30px;
+}
+.forecast-container .forecast{
+  width: 100%;
+  background-color: #f7f4f4;
+  max-height: 100%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 40px 30px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: .2s;
+  @media (min-width:991px) {
+    width: 500px;
+  }
+}
+.forecast-container.close{
+  opacity: 0;
+  visibility: hidden;
+}
+.forecast .days .day{
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.forecast .days .day:not(:first-of-type){
+   border-top: 1px solid #d8d7d7;
+}
+.forecast .days .day img{
+   width: 50px;
+}
+.forecast .days .day span{
+  font-weight: 400;
+  color: #2c2c2c;
+  font-size: 14px;
+}
+.forecast .title{
+  text-transform: uppercase;
+}
+.forecast button{
+  background-color: #e54242;
+  color: #fff;
+  border: 1px solid #dcdbdb;
+  padding: 6px 20px;
+  border-radius: 5px;
+}
+
+/* checkbox */
+.mode{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.checkbox-wrapper-55 input[type="checkbox"] {
+  visibility: hidden;
+  display: none;
+}
+
+.checkbox-wrapper-55 *,
+.checkbox-wrapper-55 ::after,
+.checkbox-wrapper-55 ::before {
+  box-sizing: border-box;
+}
+
+.checkbox-wrapper-55 .rocker {
+  display: inline-block;
+  position: relative;
+  /*
+  SIZE OF SWITCH
+  ==============
+  All sizes are in em - therefore
+  changing the font-size here
+  will change the size of the switch.
+  See .rocker-small below as example.
+  */
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: #888;
+  width: 7em;
+  height: 4em;
+  overflow: hidden;
+  border-bottom: 0.5em solid #eee;
+}
+
+.checkbox-wrapper-55 .rocker-small {
+  font-size: 0.75em;
+}
+
+.checkbox-wrapper-55 .rocker::before {
+  content: "";
+  position: absolute;
+  top: 0.5em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #999;
+  border: 0.5em solid #eee;
+  border-bottom: 0;
+}
+
+.checkbox-wrapper-55 .switch-left,
+.checkbox-wrapper-55 .switch-right {
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5em;
+  width: 3em;
+  transition: 0.2s;
+  user-select: none;
+}
+
+.checkbox-wrapper-55 .switch-left {
+  height: 2.4em;
+  width: 2.75em;
+  left: 0.85em;
+  bottom: 0.4em;
+  background-color: #ddd;
+  transform: rotate(15deg) skewX(15deg);
+}
+
+.checkbox-wrapper-55 .switch-right {
+  right: 0.5em;
+  bottom: 0;
+  background-color: #2a89f5;
+  color: #fff;
+}
+
+.checkbox-wrapper-55 .switch-left::before,
+.checkbox-wrapper-55 .switch-right::before {
+  content: "";
+  position: absolute;
+  width: 0.4em;
+  height: 2.45em;
+  bottom: -0.45em;
+  background-color: #ccc;
+  transform: skewY(-65deg);
+}
+
+.checkbox-wrapper-55 .switch-left::before {
+  left: -0.4em;
+}
+
+.checkbox-wrapper-55 .switch-right::before {
+  right: -0.375em;
+  background-color: transparent;
+  transform: skewY(65deg);
+}
+
+.checkbox-wrapper-55 input:checked + .switch-left {
+  background-color: #212020;
+  color: #fff;
+  bottom: 0px;
+  left: 0.5em;
+  height: 2.5em;
+  width: 3em;
+  transform: rotate(0deg) skewX(0deg);
+}
+
+.checkbox-wrapper-55 input:checked + .switch-left::before {
+  background-color: transparent;
+  width: 3.0833em;
+}
+
+.checkbox-wrapper-55 input:checked + .switch-left + .switch-right {
+  background-color: #ddd;
+  color: #888;
+  bottom: 0.4em;
+  right: 0.8em;
+  height: 2.4em;
+  width: 2.75em;
+  transform: rotate(-15deg) skewX(-15deg);
+}
+
+.checkbox-wrapper-55 input:checked + .switch-left + .switch-right::before {
+  background-color: #ccc;
+}
+
+/* Keyboard Users */
+.checkbox-wrapper-55 input:focus + .switch-left {
+  color: #333;
+}
+
+.checkbox-wrapper-55 input:checked:focus + .switch-left {
+  color: #fff;
+}
+
+.checkbox-wrapper-55 input:focus + .switch-left + .switch-right {
+  color: #fff;
+}
+
+.checkbox-wrapper-55 input:checked:focus + .switch-left + .switch-right {
+  color: #333;
+}
+
+.loading-page{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9933;
 }

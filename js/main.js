@@ -21,7 +21,7 @@ let loadingForecast = document.querySelector(".forecast-container .loading");
 async function weatherApi() {
   circleLoading.style.display = "block";
   let weatherRequest = await fetch(
-    `https://api.weatherbit.io/v2.0/forecast/daily?city=${cityName}&key=a1e9b4d91ac2493ca0c667e0103e2ab8&days=7`,
+    `https://api.weatherbit.io/v2.0/forecast/daily?city=${cityName}&key=aebbb4c0af804d9c81e9fa0f9915dd7f&days=7`,
     {
       method: "get",
       headers: {
